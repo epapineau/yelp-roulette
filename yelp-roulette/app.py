@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from call_yelp import chooseAtRandom
+from .call_yelp import chooseAtRandom
 
 # Initialize flask app
 app = Flask(__name__)
