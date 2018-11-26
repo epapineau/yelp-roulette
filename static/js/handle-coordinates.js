@@ -10,8 +10,15 @@ function geoFindMe() {
 
     function success(position) {
         // Define coordinates
-        var latitude  = position.coords.latitude;
-        var longitude = position.coords.longitude;
+        var location = {'latitude': position.coords.latitude,
+                        'longitude': position.coords.longitude};
+        console.log(location);
+
+        // $.post( "/postcoords", {
+        //     canvas_data: JSON.stringify(outputData)
+        //   }, function(err, req, resp){
+        //     window.location.href = "/results/"+resp["responseJSON"]["uuid"];  
+        //   });
     }
 
     function error() {

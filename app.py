@@ -9,10 +9,18 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/get_location')
+def getCoords():
+    selection = chooseAtRandom()
+    # On first load, must visit /get because there is no selection
+    return render_template('index.html', selection = selection)
+
 @app.route('/get')
 def get():
     selection = chooseAtRandom()
-    return render_template('index.html', selection = selection)
+    # On first load, must visit /get because there is no selection
+    return render_template('display-choice.html', selection = selection)
+
 
 # Debugger on
 if __name__ == "__main__":
