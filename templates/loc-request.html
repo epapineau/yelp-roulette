@@ -19,26 +19,9 @@
                 </div>
             </div>
     </div>
+    <div id = "out"></div>
 
-    <div class = "container">
-        <div class = "row">
-            <div class = "col-12 d-flex justify-content-center">
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block" src="{{ selection.image_url }}" alt="restaurant image" style = "height: 300px;">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class = "row">
-            <div class = "col-12 text-center">
-                <h4 class = "m-3">{{ selection.name }}</h4>
-                <h6 class = "m-3">{{ selection.location.address1 }}</h6>
-            </div>
-        </div>
-    </div>
+<script src="{{ url_for('static', filename='js/handle-coordinates.js') }}"></script>
+<script src="{{ url_for('static', filename='js/geolocate-popup.js') }}"></script>
 </body>
 </html>

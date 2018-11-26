@@ -8,14 +8,7 @@ import datetime as dt
 from config import auth, key
 
 
-def chooseAtRandom():
-    # Get current location; https://ipstack.com/quickstart 
-    ip = "73.162.222.67"
-    locURL = f"http://api.ipstack.com/{ip}?access_key={key}"
-    r = requests.get(locURL).json()
-    searchLat = r['latitude']
-    searchLon = r['longitude']
-
+def chooseAtRandom(searchLat, searchLon):
     # Authorize to yelp
     headers = {"Authorization":"Bearer " + auth}
     plusHour = dt.datetime.now() + dt.timedelta(hours = 1)

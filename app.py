@@ -11,16 +11,12 @@ def index():
 
 @app.route('/get_location')
 def getCoords():
-    selection = chooseAtRandom()
-    # On first load, must visit /get because there is no selection
-    return render_template('index.html', selection = selection)
+    return render_template('loc-request.html')
 
-@app.route('/get')
-def get():
-    selection = chooseAtRandom()
-    # On first load, must visit /get because there is no selection
+@app.route('/choice/<lat>/<lon>')
+def getRestaurant(lat, lon):
+    selection = chooseAtRandom(lat, lon)
     return render_template('display-choice.html', selection = selection)
-
 
 # Debugger on
 if __name__ == "__main__":

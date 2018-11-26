@@ -1,5 +1,6 @@
 // Function to handle coordinates
 function geoFindMe() {
+    // Define piece of the page to send feedback to
     var output = document.getElementById("out");
     
     // Error
@@ -10,15 +11,11 @@ function geoFindMe() {
 
     function success(position) {
         // Define coordinates
-        var location = {'latitude': position.coords.latitude,
-                        'longitude': position.coords.longitude};
-        console.log(location);
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
 
-        // $.post( "/postcoords", {
-        //     canvas_data: JSON.stringify(outputData)
-        //   }, function(err, req, resp){
-        //     window.location.href = "/results/"+resp["responseJSON"]["uuid"];  
-        //   });
+        // Navigate to endpoint with coordinates
+        window.location.href = `/choice/${latitude}/${longitude}`
     }
 
     function error() {
