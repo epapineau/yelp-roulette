@@ -1,0 +1,1 @@
+conda create -n yelp_roulette_env python=3.6
