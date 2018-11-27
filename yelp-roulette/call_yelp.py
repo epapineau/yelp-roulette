@@ -1,12 +1,15 @@
 # Import dependencies
+import os
 import time
 import json
 import random
 import requests
 import pandas as pd
 import datetime as dt
-from config import auth, key
+# from config import auth, key
 
+auth = os.environ['auth']
+key = os.environ['key']
 
 def chooseAtRandom(searchLat, searchLon):
     # Authorize to yelp
